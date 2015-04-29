@@ -1,0 +1,70 @@
+%-----------------------------------------------------------------------------------------
+% Autor dieser Vorlage: Stefan Macke (http://blog.macke.it Twitter: @StefanMacke) 
+% Link zur Vorlage: http://f.macke.it/LaTeXVorlageFIAE 
+%
+% Sämtliche verwendeten Abbildungen, Tabellen und Listings stammen von Dirk Grashorn.
+%
+% Lizenz: Creative Commons 3.0 Namensnennung - Weitergabe unter gleichen Bedingungen
+%-----------------------------------------------------------------------------------------
+
+\documentclass[
+	toc=listof, % Abbildungsverzeichnis sowie Tabellenverzeichnis in das Inhaltsverzeichnis aufnehmen
+	toc=bibliography, % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
+	footnotes=multiple, % Trennen von direkt aufeinander folgenden Fußnoten
+	parskip=half % vertikalen Abstand zwischen Absätzen verwenden anstatt horizontale Einrückung von Folgeabsätzen           
+]{scrartcl}
+
+\usepackage[utf8]{inputenc} % muss als erstes eingebunden werden, da Meta/Packages ggfs. Sonderzeichen enthalten
+
+\input{Meta.tex} % Metadaten zu diesem Dokument (Autor usw.)
+\input{Allgemein/Packages.tex} % verwendete Packages
+\input{Allgemein/Seitenstil.tex} % Definitionen zum Aussehen der Seiten
+\input{Allgemein/Befehle.tex} % eigene allgemeine Befehle, die z.B. die Arbeit mit LaTeX erleichtern
+\input{Befehle.tex} % eigene projektspezifische Befehle, z.B. Abkürzungen usw.
+
+\begin{document}
+\input{Deckblatt.tex}
+\clearpage
+
+% kann nach dem Lesen entfernt werden
+\pagenumbering{Alph}
+\input{Vorlage}
+
+% Preface --------------------------------------------------------------------
+\pagenumbering{Roman}
+\pdfbookmark[1]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+\clearpage
+
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+\newcommand{\abkvz}{Abkürzungsverzeichnis}
+\renewcommand{\nomname}{\abkvz}
+\section*{\abkvz}
+\markboth{\abkvz}{\abkvz}
+\addcontentsline{toc}{section}{\abkvz}
+\input{Abkuerzungen}
+\clearpage
+
+% Inhalt ---------------------------------------------------------------------
+\pagenumbering{arabic}
+\input{Inhalt.tex}
+
+% Literatur ------------------------------------------------------------------
+\clearpage
+\renewcommand{\refname}{Literaturverzeichnis}
+\bibliography{Bibliographie}
+\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses
+\input{Erklaerung}
+
+% Anhang ---------------------------------------------------------------------
+\clearpage
+\appendix
+\pagenumbering{roman}
+\input{Anhang.tex}
+
+\end{document}

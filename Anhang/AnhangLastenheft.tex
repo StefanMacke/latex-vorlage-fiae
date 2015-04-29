@@ -1,0 +1,32 @@
+\subsection{Lastenheft (Auszug)}
+\label{app:Lastenheft}
+Es folgt ein Auszug aus dem Lastenheft mit Fokus auf die Anforderungen:
+
+Die Anwendung muss folgende Anforderungen erfüllen: 
+\begin{enumerate}[itemsep=0em,partopsep=0em,parsep=0em,topsep=0em]
+\item Verarbeitung der Moduldaten
+	\begin{enumerate}
+	\item Die Anwendung muss die von Subversion und einem externen Programm bereitgestellten Informationen (z.B. Source-Benutzer, -Datum, Hash) verarbeiten.
+	\item Auslesen der Beschreibung und der Stichwörter aus dem Sourcecode.
+	\end{enumerate}
+\item Darstellung der Daten
+	\begin{enumerate}
+	\item Die Anwendung muss eine Liste aller Module erzeugen inkl. Source-Benutzer und -Datum, letztem Commit-Benutzer und -Datum für alle drei Umgebungen. 
+	\item Verknüpfen der Module mit externen Tools wie z.B. Wiki-Einträgen zu den Modulen oder dem Sourcecode in Subversion.
+	\item Die Sourcen der Umgebungen müssen verglichen und eine schnelle Übersicht zur Einhaltung des allgemeinen Entwicklungsprozesses gegeben werden. 
+	\item Dieser Vergleich muss auf die von einem bestimmten Benutzer bearbeiteten Module eingeschränkt werden können. 
+	\item Die Anwendung muss in dieser Liste auch Module anzeigen, die nach einer Bearbeitung durch den gesuchten Benutzer durch jemand anderen bearbeitet wurden. 
+	\item Abweichungen sollen kenntlich gemacht werden. 
+	\item Anzeigen einer Übersichtsseite für ein Modul mit allen relevanten Informationen zu diesem.
+	\end{enumerate}
+\item Sonstige Anforderungen
+	\begin{enumerate}
+	\item Die Anwendung muss ohne das Installieren einer zusätzlichen Software über einen Webbrowser im Intranet erreichbar sein.
+	\item Die Daten der Anwendung müssen jede Nacht \bzw nach jedem \acs{SVN}-Commit automatisch aktualisiert werden. 
+	\item Es muss ermittelt werden, ob Änderungen auf der Produktionsumgebung vorgenommen wurden, die nicht von einer anderen Umgebung kopiert wurden. Diese Modulliste soll als Mahnung per E-Mail an alle Entwickler geschickt werden (Peer Pressure).
+	\item Die Anwendung soll jederzeit erreichbar sein.
+	\item Da sich die Entwickler auf die Anwendung verlassen, muss diese korrekte Daten liefern und darf keinen Interpretationsspielraum lassen.
+	\item Die Anwendung muss so flexibel sein, dass sie bei Änderungen im Entwicklungsprozess einfach angepasst werden kann.
+	\end{enumerate}
+\end{enumerate}
+

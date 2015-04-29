@@ -1,0 +1,169 @@
+% Anpassung an Landessprache ---------------------------------------------------
+\usepackage[ngerman]{babel}
+
+% Umlaute ----------------------------------------------------------------------
+%   Umlaute/Sonderzeichen wie äüöß direkt im Quelltext verwenden (CodePage).
+%   Erlaubt automatische Trennung von Worten mit Umlauten.
+% ------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{textcomp} % Euro-Zeichen etc.
+
+% Schrift ----------------------------------------------------------------------
+\usepackage{lmodern} % bessere Fonts
+\usepackage{relsize} % Schriftgröße relativ festlegen
+
+% Tabellen ---------------------------------------------------------------------
+\PassOptionsToPackage{table}{xcolor}
+\usepackage{tabularx}
+% für lange Tabellen
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{lscape}
+\newcolumntype{w}[1]{>{\raggedleft\hspace{0pt}}p{#1}} % Spaltendefinition rechtsbündig mit definierter Breite
+
+% Grafiken ---------------------------------------------------------------------
+\usepackage[dvips,final]{graphicx} % Einbinden von JPG-Grafiken ermöglichen
+\usepackage{graphics} % keepaspectratio
+\usepackage{floatflt} % zum Umfließen von Bildern
+\graphicspath{{Bilder/}} % hier liegen die Bilder des Dokuments
+
+% Sonstiges --------------------------------------------------------------------
+\usepackage{amsmath,amsfonts} % Befehle aus AMSTeX für mathematische Symbole
+\usepackage{enumitem} % anpassbare Enumerates/Itemizes
+\usepackage{xspace} % sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
+
+\usepackage{makeidx} % für Index-Ausgabe mit \printindex
+\usepackage[printonlyused]{acronym} % es werden nur benutzte Definitionen aufgelistet
+
+% Einfache Definition der Zeilenabstände und Seitenränder etc.
+\usepackage{setspace}
+\usepackage{geometry}
+
+% Symbolverzeichnis
+\usepackage[intoc]{nomencl}
+\let\abbrev\nomenclature
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+
+\usepackage{url} % URL verlinken, lange URLs umbrechen etc.
+\usepackage{chngcntr} % fortlaufendes Durchnummerieren der Fußnoten
+\usepackage{ifthen} % bei der Definition eigener Befehle benötigt
+\usepackage{todonotes} % definiert u.a. die Befehle \todo und \listoftodos
+\usepackage[square]{natbib} % wichtig für korrekte Zitierweise
+
+% PDF-Optionen -----------------------------------------------------------------
+\usepackage{pdfpages}
+\pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!)
+\usepackage[
+    bookmarks,
+    bookmarksnumbered,    
+    bookmarksopen=true,
+    bookmarksopenlevel=1,
+    colorlinks=true,
+% diese Farbdefinitionen zeichnen Links im PDF farblich aus
+    linkcolor=AOBlau, % einfache interne Verknüpfungen
+    anchorcolor=AOBlau,% Ankertext
+    citecolor=AOBlau, % Verweise auf Literaturverzeichniseinträge im Text
+    filecolor=AOBlau, % Verknüpfungen, die lokale Dateien öffnen
+    menucolor=AOBlau, % Acrobat-Menüpunkte
+    urlcolor=AOBlau, 
+% diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
+    %linkcolor=black, % einfache interne Verknüpfungen
+    %anchorcolor=black, % Ankertext
+    %citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
+    %filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
+    %menucolor=black, % Acrobat-Menüpunkte
+    %urlcolor=black, 
+%
+    %backref, % Quellen werden zurück auf ihre Zitate verlinkt
+    pdftex,
+    plainpages=false, % zur korrekten Erstellung der Bookmarks
+    pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
+    hypertexnames=false, % zur korrekten Erstellung der Bookmarks
+    linktocpage % Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
+]{hyperref}
+% Befehle, die Umlaute ausgeben, führen zu Fehlern, wenn sie hyperref als Optionen übergeben werden
+\hypersetup{
+    pdftitle={\titel -- \untertitel},
+    pdfauthor={\autor},
+    pdfcreator={\autor},
+    pdfsubject={\titel -- \untertitel},
+    pdfkeywords={\titel -- \untertitel},
+}
+
+
+% zum Einbinden von Programmcode -----------------------------------------------
+\usepackage{listings}
+\usepackage{xcolor} 
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{0,0.5,0}
+\definecolor{colString}{rgb}{1,0,0}
+\lstset{
+    float=hbp,
+	basicstyle=\footnotesize,
+    identifierstyle=\color{colIdentifier},
+    keywordstyle=\color{colKeys},
+    stringstyle=\color{colString},
+    commentstyle=\color{colComments},
+    backgroundcolor=\color{hellgelb},
+    columns=flexible,
+    tabsize=2,
+    frame=single,
+    extendedchars=true,
+    showspaces=false,
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    breakautoindent=true,
+	captionpos=b,
+}
+\lstdefinelanguage{cs}{
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+	morekeywords={
+		abstract,event,new,struct,as,explicit,null,switch
+		base,extern,object,this,bool,false,operator,throw,
+		break,finally,out,true,byte,fixed,override,try,
+		case,float,params,typeof,catch,for,private,uint,
+		char,foreach,protected,ulong,checked,goto,public,unchecked,
+		class,if,readonly,unsafe,const,implicit,ref,ushort,
+		continue,in,return,using,decimal,int,sbyte,virtual,
+		default,interface,sealed,volatile,delegate,internal,short,void,
+		do,is,sizeof,while,double,lock,stackalloc,
+		else,long,static,enum,namespace,string},
+}
+\lstdefinelanguage{natural}{
+	sensitive=false,
+	morecomment=[l]{/*},
+	morestring=[b]",
+	morestring=[b]',
+	alsodigit={-,*},
+	morekeywords={
+		DEFINE,DATA,LOCAL,END-DEFINE,WRITE,CALLNAT,PARAMETER,USING,
+		IF,NOT,END-IF,ON,*ERROR-NR,ERROR,END-ERROR,ESCAPE,ROUTINE,
+		PERFORM,SUBROUTINE,END-SUBROUTINE,CONST,END-FOR,END,FOR,RESIZE,
+		ARRAY,TO,BY,VALUE,RESET,COMPRESS,INTO,EQ},
+}
+\lstdefinelanguage{php}{
+	sensitive=false,
+	morecomment=[l]{/*},
+	morestring=[b]",
+	morestring=[b]',
+	alsodigit={-,*},
+	morekeywords={
+		abstract,and,array,as,break,case,catch,cfunction,class,clone,const,
+		continue,declare,default,do,else,elseif,enddeclare,endfor,endforeach,
+		endif,endswitch,endwhile,extends,final,for,foreach,function,global,
+		goto,if,implements,interface,instanceof,namespace,new,old_function,or,
+		private,protected,public,static,switch,throw,try,use,var,while,xor
+		die,echo,empty,exit,eval,include,include_once,isset,list,require,
+		require_once,return,print,unset},
+}

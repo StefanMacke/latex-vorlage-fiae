@@ -1,0 +1,83 @@
+% Abkürzungen, ggfs. mit korrektem Leerraum 
+\newcommand{\bs}{$\backslash$\xspace}
+\newcommand{\bspw}{bspw.\xspace}
+\newcommand{\bzw}{bzw.\xspace}
+\newcommand{\ca}{ca.\xspace}
+\newcommand{\dahe}{\mbox{d.\,h.}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\eur}[1]{\mbox{#1\,\texteuro}\xspace}
+\newcommand{\evtl}{evtl.\xspace}
+\newcommand{\ggfs}{ggfs.\xspace}
+\newcommand{\Ggfs}{Ggfs.\xspace}
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
+\newcommand{\inkl}{inkl.\xspace}
+\newcommand{\insb}{insb.\xspace}
+\newcommand{\ua}{\mbox{u.\,a.}\xspace}
+\newcommand{\usw}{usw.\xspace}
+\newcommand{\Vgl}{Vgl.\xspace}
+\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+
+% Befehle für häufig anfallende Aufgaben
+\newcommand{\Abbildung}[1]{Abbildung~\ref{fig:#1}}
+\newcommand{\Anhang}[1]{Anhang~\ref{#1}: \nameref{#1} auf S.~\pageref{#1}}
+\newcommand{\includegraphicsKeepAspectRatio}[2]{\includegraphics[width=#2\textwidth,height=#2\textheight,keepaspectratio]{#1}}
+\newcommand{\Zitat}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\citep{#2}}{\citep[#1]{#2}}}
+\newcommand{\Autor}[1]{\textsc{#1}} % zum Ausgeben von Autoren
+\newcommand{\itemd}[2]{\item{\textbf{#1}}\\{#2}} % erzeugt ein Listenelement mit fetter Überschrift
+
+% fügt Tabellen aus einer TEX-Datei ein
+\newcommand{\tabelle}[3] % Parameter: caption, label, file
+{\begin{table}[htbp]
+\centering
+\singlespacing
+\input{Tabellen/#3}
+\caption{#1}
+\label{#2}
+\end{table}}
+
+\newcommand{\tabelleAnhang}[1] % Parameter: file
+{\begin{center}
+\singlespacing
+\input{Tabellen/#1}
+\end{center}}
+
+% einfaches Wechseln der Schrift, z.B.: \changefont{cmss}{sbc}{n}
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+% Verwendung analog zu \includegraphics
+\newlength{\myx} % Variable zum Speichern der Bildbreite
+\newlength{\myy} % Variable zum Speichern der Bildhöhe
+\newcommand\includegraphicstotab[2][\relax]{%
+% Abspeichern der Bildabmessungen
+\settowidth{\myx}{\includegraphics[{#1}]{#2}}%
+\settoheight{\myy}{\includegraphics[{#1}]{#2}}%
+% das eigentliche Einfügen
+\parbox[c][1.1\myy][c]{\myx}{%
+\includegraphics[{#1}]{#2}}%
+}
+
+\definecolor{AOBlau}{rgb}{0, 0.28, 0.56}
+
+% verschiedene Befehle um Wörter semantisch auszuzeichnen ----------------------
+\newcommand{\Index}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\index{#2}#2}{\index{#1}#2}}
+\newcommand{\Fachbegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textit{\Index{#2}}}{\textit{\Index[#1]{#2}}}}
+\newcommand{\NeuerBegriff}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\textbf{\Index{#2}}}{\textbf{\Index[#1]{#2}}}}
+
+\newcommand{\Ausgabe}[1]{\texttt{#1}}
+\newcommand{\Eingabe}[1]{\texttt{#1}}
+\newcommand{\Code}[1]{\texttt{#1}}
+\newcommand{\Datei}[1]{\texttt{#1}}
+
+\newcommand{\Assembly}[1]{\textsf{#1}}
+\newcommand{\Klasse}[1]{\textsf{#1}}
+\newcommand{\Methode}[1]{\textsf{#1}}
+\newcommand{\Attribut}[1]{\textsf{#1}}
+
+\newcommand{\Datentyp}[1]{\textsf{#1}}
+\newcommand{\XMLElement}[1]{\textsf{#1}}
+\newcommand{\Webservice}[1]{\textsf{#1}}
+
+\newcommand{\Refactoring}[1]{\Fachbegriff{#1}}
+\newcommand{\CodeSmell}[1]{\Fachbegriff{#1}}
+\newcommand{\Metrik}[1]{\Fachbegriff{#1}}
+\newcommand{\DesignPattern}[1]{\Fachbegriff{#1}}

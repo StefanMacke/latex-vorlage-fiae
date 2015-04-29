@@ -1,0 +1,82 @@
+\section*{Über diese Vorlage}
+
+Diese \LaTeX-Vorlage wurde von Stefan Macke\footnote{Blog des Autors: \url{http://blog.macke.it}, Twitter: \Eingabe{@StefanMacke}} 
+als Grundlage für die Projektdokumentationen der Auszubildenden zum Fachinformatiker mit Fachrichtung Anwendungsentwicklung 
+bei der \AO entwickelt. Nichtsdestotrotz dürfte sie ebenso für die anderen IT-Berufe\footnote{\zB IT-Kaufleute, Fachinformatiker 
+mit Fachrichtung Systemintegration \usw} geeignet sein, da diese anhand der gleichen Verordnung bewertet werden.
+
+Diese Vorlage enthält bereits eine Vorstrukturierung der möglichen Inhalte einer tatsächlichen Projektdokumentation, die auf Basis der 
+Erfahrungen im Rahmen der Prüfertätigkeit des Autors erstellt und unter Zuhilfenahme von \citet{Rohrer2011} abgerundet wurden.
+
+Sämtliche verwendeten Abbildungen, Tabellen und Listings stammen von \citet{Grashorn2010}.
+
+Download-Link für diese Vorlage: \url{http://f.macke.it/LaTeXVorlageFIAE}
+
+\subsection*{Lizenz}
+
+\begin{center}
+\includegraphicsKeepAspectRatio{CC-Logo.pdf}{0.3}
+\end{center}
+Dieses Werk steht unter einer Creative Commons Namensnennung-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz.\footnote{\url{http://creativecommons.org/licenses/by-sa/3.0/de/}}
+
+\begin{center}
+\includegraphicsKeepAspectRatio{CC-Attribution.pdf}{0.07}
+\includegraphicsKeepAspectRatio{CC-ShareAlike.pdf}{0.07}
+\end{center}
+
+\begin{description}
+	\item[Namensnennung] Sie müssen den Namen des Autors/Rechteinhabers in der von ihm festgelegten Weise nennen.\footnote{Die Namensnennung im \LaTeX-Quelltext mit Link auf \url{http://f.macke.it/LaTeXVorlageFIAE} reicht hierfür aus.}
+	\item[Weitergabe unter gleichen Bedingungen] Wenn Sie das lizenzierte Werk \bzw den lizenzierten Inhalt bearbeiten 
+	oder in anderer Weise erkennbar als Grundlage für eigenes Schaffen verwenden, dürfen Sie die daraufhin neu entstandenen 
+	Werke \bzw Inhalte nur unter Verwendung von Lizenzbedingungen weitergeben, die mit denen dieses Lizenzvertrages identisch oder vergleichbar sind. 
+\end{description}
+
+\subsection*{Inhalt der Projektdokumentation}
+
+Grundsätzlich definiert die \citet[S.~1746]{Bundesgesetzblatt48}\QuelleLiegtBei das Ziel der Projektdokumentation wie folgt:
+\begin{quote}
+"`Durch die Projektarbeit und deren Dokumentation soll der Prüfling belegen, daß er Arbeitsabläufe und Teilaufgaben zielorientiert unter Beachtung wirtschaftlicher, technischer, organisatorischer und zeitlicher Vorgaben selbständig planen und kundengerecht umsetzen sowie Dokumentationen kundengerecht anfertigen, zusammenstellen und modifizieren kann."'
+\end{quote}
+
+Und das \citet[S.~36]{BMBF2000}\QuelleLiegtBei ergänzt:
+\begin{quote}
+"`Die Ausführung der Projektarbeit wird mit praxisbezogenen Unterlagen dokumentiert.
+Der Prüfungsausschuss bewertet die Projektarbeit anhand der Dokumentation. Dabei
+wird nicht das Ergebnis -- \zB ein lauffähiges Programm -- herangezogen, sondern
+der Arbeitsprozess. Die Dokumentation ist keine wissenschaftliche Abhandlung,
+sondern eine handlungsorientierte Darstellung des Projektablaufs mit
+praxisbezogenen, d.h. betriebüblichen Unterlagen. Sie soll einen Umfang von
+maximal 10 bis 15 DIN A 4-Seiten nicht überschreiten. Soweit erforderlich können in
+einem Anhang \zB den Zusammenhang erläuternde Darstellungen beigefügt werden."'
+\end{quote}
+
+Außerdem werden dort die grundlegenden Inhalte der Projektdokumentation aufgelistet:
+\begin{itemize}
+	\item Name und Ausbildungsberuf des Prüfungsteilnehmers
+	\item Angabe des Ausbildungsbetriebes
+	\item Thema der Projektarbeit
+	\item Falls erforderlich, Beschreibung/Konkretisierung des Auftrages
+	\item Umfassende Beschreibung der Prozessschritte und der erzielten Ergebnisse
+	\item Gegebenenfalls Veränderungen zum Projektantrag mit Begründung
+	\item Wenn für das Projekt erforderlich, ein Anhang mit praxisbezogenen Unterlagen und Dokumenten. Dieser Anhang sollte nicht aufgebläht werden. Die angehängten Dokumente und Unterlagen sind auf das absolute Minimum zu beschränken.
+\end{itemize}
+
+In den folgenden Kapiteln werden diese geforderten Inhalte und sinnvolle Ergänzungen nun meist stichwortartig und \ggfs mit Beispielen beschrieben. Nicht alle Kapitel müssen in jeder Dokumentation vorhanden sein. Handelt es sich \bspw um ein in sich geschlossenes Projekt, kann das Kapitel~\ref{sec:Projektabgrenzung}: \nameref{sec:Projektabgrenzung} entfallen; arbeitet die Anwendung nur mit \acs{XML}-Dateien, kann und muss keine Datenbank beschrieben werden \usw
+
+
+\subsection*{Formale Vorgaben}
+
+Die formalen Vorgaben zum Umfang und zur Gestaltung der Projektdokumentation können je nach IHK recht unterschiedlich sein. 
+Normalerweise sollte die zuständige IHK einen Leitfaden bereitstellen, in dem alle Formalien nachgelesen werden können, wie \zB bei der \citet{MerkblattIHK}\QuelleLiegtBei.
+ 
+Als Richtwert verwende ich 15 Seiten für den reinen Inhalt. Also in dieser Vorlage alle Seiten, die arabisch nummeriert sind (ohne das Literaturverzeichnis und die eidesstattliche Erklärung). 
+Große Abbildungen, Quelltexte, Tabellen \usw gehören in den Anhang, der 25 Seiten nicht überschreiten sollte.
+
+Typographische Konventionen, Seitenränder \usw können in der Datei \Datei{Seitenstil.tex} beliebig angepasst werden.
+
+
+\subsection*{Bewertungskriterien}
+Die Bewertungskriterien für die Benotung der Projektdokumentation sind recht einheitlich und können leicht in Erfahrung gebracht werden, \zB bei der \citet{BewertungsmatrikIHK}.\QuelleLiegtBei
+Grundsätzlich sollte die Projektdokumentation nach der Fertigstellung noch einmal im Hinblick auf diese Kriterien durchgeschaut werden.
+
+\clearpage
