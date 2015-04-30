@@ -26,6 +26,31 @@
 \cfoot{}
 \ofoot{\pagemark}
 
+% Überschriften nach DIN 5008 in einer Fluchtlinie
+% ------------------------------------------------------------------------------
+
+% Abstand zwischen Nummerierung und Überschrift definieren
+% > Schön wäre hier die dynamische Berechnung des Abstandes in Abhängigkeit
+% > der Verschachtelungstiefe des Inhaltsverzeichnisses
+\newcommand{\headingSpace}{1.5cm}
+
+% Abschnittsüberschriften im selben Stil wie beim Inhaltsverzeichnis einrücken
+\renewcommand*{\othersectionlevelsformat}[3]{
+  \makebox[\headingSpace][l]{#3\autodot}
+}
+
+% Für die Einrückung wird das Paket tocloft benötigt
+%\cftsetindents{chapter}{0.0cm}{\headingSpace}
+\cftsetindents{section}{0.0cm}{\headingSpace}
+\cftsetindents{subsection}{0.0cm}{\headingSpace}
+\cftsetindents{subsubsection}{0.0cm}{\headingSpace}
+\cftsetindents{figure}{0.0cm}{\headingSpace}
+\cftsetindents{table}{0.0cm}{\headingSpace}
+
+
+% Allgemeines
+% ------------------------------------------------------------------------------
+
 \onehalfspacing % Zeilenabstand 1,5 Zeilen
 \frenchspacing % erzeugt ein wenig mehr Platz hinter einem Punkt 
 
