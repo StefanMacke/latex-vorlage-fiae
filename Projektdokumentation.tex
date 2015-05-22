@@ -1,11 +1,12 @@
 %-----------------------------------------------------------------------------------------
-% Autor dieser Vorlage: Stefan Macke (http://blog.macke.it Twitter: @StefanMacke) 
-% Link zur Vorlage: http://f.macke.it/LaTeXVorlageFIAE 
+% Autor dieser Vorlage:
+% Stefan Macke (http://fachinformatiker-anwendungsentwicklung.net)
+% Permalink zur Vorlage: http://fiae.link/LaTeXVorlageFIAE
 %
 % Sämtliche verwendeten Abbildungen, Tabellen und Listings stammen von Dirk Grashorn.
 %
-% Lizenz: Creative Commons 3.0 Namensnennung - Weitergabe unter gleichen Bedingungen
-%-----------------------------------------------------------------------------------------
+% Lizenz: Creative Commons 4.0 Namensnennung - Weitergabe unter gleichen Bedingungen
+% -----------------------------------------------------------------------------------------
 
 \documentclass[
 	toc=listof, % Abbildungsverzeichnis sowie Tabellenverzeichnis in das Inhaltsverzeichnis aufnehmen
@@ -24,24 +25,44 @@
 \input{Befehle.tex} % eigene projektspezifische Befehle, z.B. Abkürzungen usw.
 
 \begin{document}
-\input{Deckblatt.tex}
-\clearpage
 
-% kann nach dem Lesen entfernt werden
-\pagenumbering{Alph}
+% kann nach dem Lesen entfernt werden ---------------------------------------
+\pagestyle{plain}
 \input{Vorlage}
+\cleardoublepage
+\pagestyle{scrheadings}
+% ---------------------------------------------------------------------------
+
+\phantomsection
+\thispagestyle{empty}
+\pdfbookmark[1]{Eidesstattliche Erklärung}{toc}
+\includegraphicsKeepAspectRatio{DeckblattIHK}{1}
+\cleardoublepage
+
+\phantomsection
+\thispagestyle{plain}
+\pdfbookmark[1]{Deckblatt}{toc}
+\input{Deckblatt.tex}
+\cleardoublepage
 
 % Preface --------------------------------------------------------------------
+\phantomsection
 \pagenumbering{Roman}
 \pdfbookmark[1]{Inhaltsverzeichnis}{toc}
 \tableofcontents
-\clearpage
+\cleardoublepage
 
+\phantomsection
 \listoffigures
-\clearpage
+\cleardoublepage
 
+\phantomsection
 \listoftables
-\clearpage
+\cleardoublepage
+
+\phantomsection
+\lstlistoflistings
+\cleardoublepage
 
 \newcommand{\abkvz}{Abkürzungsverzeichnis}
 \renewcommand{\nomname}{\abkvz}

@@ -52,7 +52,10 @@
 \setlength{\nomitemsep}{-\parsep}
 
 \usepackage{url} % URL verlinken, lange URLs umbrechen etc.
+
 \usepackage{chngcntr} % fortlaufendes Durchnummerieren der Fußnoten
+% \usepackage[perpage]{footmisc} % Alternative: Nummerierung der Fußnoten auf jeder Seite neu
+
 \usepackage{ifthen} % bei der Definition eigener Befehle benötigt
 \usepackage{todonotes} % definiert u.a. die Befehle \todo und \listoftodos
 \usepackage[square]{natbib} % wichtig für korrekte Zitierweise
@@ -62,7 +65,7 @@
 \pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!)
 \usepackage[
     bookmarks,
-    bookmarksnumbered,    
+    bookmarksnumbered,
     bookmarksopen=true,
     bookmarksopenlevel=1,
     colorlinks=true,
@@ -72,14 +75,14 @@
     citecolor=AOBlau, % Verweise auf Literaturverzeichniseinträge im Text
     filecolor=AOBlau, % Verknüpfungen, die lokale Dateien öffnen
     menucolor=AOBlau, % Acrobat-Menüpunkte
-    urlcolor=AOBlau, 
+    urlcolor=AOBlau,
 % diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
     %linkcolor=black, % einfache interne Verknüpfungen
     %anchorcolor=black, % Ankertext
     %citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
     %filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
     %menucolor=black, % Acrobat-Menüpunkte
-    %urlcolor=black, 
+    %urlcolor=black,
 %
     %backref, % Quellen werden zurück auf ihre Zitate verlinkt
     pdftex,
@@ -100,7 +103,7 @@
 
 % zum Einbinden von Programmcode -----------------------------------------------
 \usepackage{listings}
-\usepackage{xcolor} 
+\usepackage{xcolor}
 \definecolor{hellgelb}{rgb}{1,1,0.9}
 \definecolor{colKeys}{rgb}{0,0,1}
 \definecolor{colIdentifier}{rgb}{0,0,0}
