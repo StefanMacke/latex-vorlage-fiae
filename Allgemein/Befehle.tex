@@ -1,6 +1,6 @@
 % !TEX root = ../Projektdokumentation.tex
 
-% Abkürzungen, ggfs. mit korrektem Leerraum 
+% Abkürzungen, ggfs. mit korrektem Leerraum
 \newcommand{\bs}{$\backslash$\xspace}
 \newcommand{\bspw}{bspw.\xspace}
 \newcommand{\bzw}{bzw.\xspace}
@@ -20,8 +20,8 @@
 \newcommand{\zB}{\mbox{z.\,B.}\xspace}
 
 % Befehle für häufig anfallende Aufgaben
-\newcommand{\Abbildung}[1]{Abbildung~\ref{fig:#1}}
-\newcommand{\Anhang}[1]{Anhang~\ref{#1}: \nameref{#1} auf S.~\pageref{#1}}
+\newcommand{\Abbildung}[1]{\autoref{fig:#1}}
+\newcommand{\Anhang}[1]{\appendixname{}~\ref{#1}: \nameref{#1} \vpageref{#1}}
 \newcommand{\includegraphicsKeepAspectRatio}[2]{\includegraphics[width=#2\textwidth,height=#2\textheight,keepaspectratio]{#1}}
 \newcommand{\Zitat}[2][\empty]{\ifthenelse{\equal{#1}{\empty}}{\citep{#2}}{\citep[#1]{#2}}}
 \newcommand{\Autor}[1]{\textsc{#1}} % zum Ausgeben von Autoren
