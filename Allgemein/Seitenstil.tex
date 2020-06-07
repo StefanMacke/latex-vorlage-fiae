@@ -8,7 +8,7 @@
 	automark, % Kapitelangaben in Kopfzeile automatisch erstellen
 	headsepline, % Trennlinie unter Kopfzeile
 	ilines % Trennlinie linksbündig ausrichten
-]{scrpage2}
+]{scrlayer-scrpage}
 
 % Kopf- und Fußzeilen ----------------------------------------------------------
 \pagestyle{scrheadings}
@@ -67,8 +67,8 @@
 \lstset{emph={square}, emphstyle=\color{red}, emph={[2]root,base}, emphstyle={[2]\color{blue}}}
 
 \counterwithout{footnote}{section} % Fußnoten fortlaufend durchnummerieren
-\setcounter{tocdepth}{\subsubsectionlevel} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen
-\setcounter{secnumdepth}{\subsubsectionlevel} % Kapitel bis zum Level der subsubsection werden nummeriert
+\setcounter{tocdepth}{3} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen
+\setcounter{secnumdepth}{3} % Kapitel bis zum Level der subsubsection werden nummeriert
 
 % Aufzählungen anpassen
 \renewcommand{\labelenumi}{\arabic{enumi}.}
