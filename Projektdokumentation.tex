@@ -1,94 +1,87 @@
-%-----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 % Autor dieser Vorlage:
-% Stefan Macke (http://fachinformatiker-anwendungsentwicklung.net)
+% Stefan Macke (http://fachinformatiker-anwendungsentwicklung.net).
 % Permalink zur Vorlage: http://fiae.link/LaTeXVorlageFIAE
 %
 % Sämtliche verwendeten Abbildungen, Tabellen und Listings stammen von Dirk Grashorn.
 %
-% Lizenz: Creative Commons 4.0 Namensnennung - Weitergabe unter gleichen Bedingungen
-% -----------------------------------------------------------------------------------------
+% Lizenz: Creative Commons 4.0 Namensnennung - Weitergabe unter gleichen Bedingungen.
+% ----------------------------------------------------------------------------
 
 \documentclass[
 	ngerman,
-	toc=listof, % Abbildungsverzeichnis sowie Tabellenverzeichnis in das Inhaltsverzeichnis aufnehmen
-	toc=bibliography, % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen
-	footnotes=multiple, % Trennen von direkt aufeinander folgenden Fußnoten
-	parskip=half, % vertikalen Abstand zwischen Absätzen verwenden anstatt horizontale Einrückung von Folgeabsätzen
-	numbers=noendperiod % Den letzten Punkt nach einer Nummerierung entfernen (nach DIN 5008)
-]{scrartcl}
-\pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!)
-\usepackage[utf8]{inputenc} % muss als erstes eingebunden werden, da Meta/Packages ggfs. Sonderzeichen enthalten
+	toc=listof, % Abbildungsverzeichnis sowie Tabellenverzeichnis in das Inhaltsverzeichnis aufnehmen.
+	toc=bibliography, % Literaturverzeichnis in das Inhaltsverzeichnis aufnehmen.
+	footnotes=multiple, % Trennen von direkt aufeinander folgenden Fußnoten.
+	parskip=half, % vertikalen Abstand zwischen Absätzen verwenden anstatt horizontale Einrückung von Folgeabsätzen.
+	numbers=noendperiod % Den letzten Punkt nach einer Nummerierung entfernen (nach DIN 5008).
+]{scrartcl}  %%  KOMA-article.  Alternative: {scrreprt} auch KOMA, mit chapters.
 
-\input{Meta} % Metadaten zu diesem Dokument (Autor usw.)
-\input{Allgemein/Packages} % verwendete Packages
-\input{Allgemein/Seitenstil} % Definitionen zum Aussehen der Seiten
-\input{Allgemein/Befehle} % eigene allgemeine Befehle, die z.B. die Arbeit mit LaTeX erleichtern
-\input{Befehle} % eigene projektspezifische Befehle, z.B. Abkürzungen usw.
+\pdfminorversion=5 % erlaubt das Einfügen von pdf-Dateien bis Version 1.7, ohne eine Fehlermeldung zu werfen (keine Garantie für fehlerfreies Einbetten!).
+\usepackage[utf8]{inputenc} % muss als erstes eingebunden werden, da Meta/Packages ggfs. Sonderzeichen enthalten.
+
+\input{Meta} % Metadaten zu diesem Dokument (Autor usw.).
+\input{Allgemein/Packages} % verwendete Packages.
+\input{Allgemein/Seitenstil} % Definitionen zum Aussehen der Seiten.
+\input{Allgemein/Befehle} % eigene allgemeine Befehle, die z.B. die Arbeit mit LaTeX erleichtern.
+%\input{Befehle} % eigene projektspezifische Befehle, z.B. Abkürzungen. Verschoben zu Allgemein/Befehle.tex.
 
 \begin{document}
 
-% kann nach dem Lesen entfernt werden ---------------------------------------
+% kann nach dem Lesen entfernt werden -----{Über diese Vorlage}--------------
 \pagestyle{plain}
-\input{Vorlage}
-\cleardoublepage
+\input{Allgemein/Vorlage}
+%\cleardoublepage
 \pagestyle{scrheadings}
-% ---------------------------------------------------------------------------
+% -----------------------------------------{Über diese Vorlage}--------------
 
-\phantomsection
-\thispagestyle{empty}
-\pdfbookmark[1]{Eidesstattliche Erklärung}{ihkdeckblatt}
-\includegraphicsKeepAspectRatio{DeckblattIHK}{1}
-\cleardoublepage
+%\phantomsection
+%\thispagestyle{empty}
+%\pdfbookmark[1]{Eidesstattliche Erklärung}{ihkdeckblatt}
+%%\includegraphicsKeepAspectRatio{DeckblattIHK}{1}
+%% Deckblatt der obigen Zeilen wird in IHK Region Stuttgart nicht gebraucht
+%\cleardoublepage
 
 \phantomsection
 \thispagestyle{plain}
 \pdfbookmark[1]{Deckblatt}{deckblatt}
-\input{Deckblatt}
-\cleardoublepage
+\input{Allgemein/Deckblatt}
+%\cleardoublepage
 
 % Preface --------------------------------------------------------------------
 \phantomsection
 \pagenumbering{Roman}
 \pdfbookmark[1]{Inhaltsverzeichnis}{inhalt}
-\tableofcontents
+\tableofcontents%\cleardoublepage
 
-\cleardoublepage
-
-\phantomsection
-\listoffigures
-\cleardoublepage
-
-\phantomsection
-\listoftables
-\cleardoublepage
-
-\phantomsection
-\lstlistoflistings
-\cleardoublepage
+\phantomsection\listoffigures%\cleardoublepage
+\phantomsection\listoftables%\cleardoublepage
+\phantomsection\lstlistoflistings%\cleardoublepage
 
 \newcommand{\abkvz}{Abkürzungsverzeichnis}
 \renewcommand{\nomname}{\abkvz}
 \section*{\abkvz}
 \markboth{\abkvz}{\abkvz}
 \addcontentsline{toc}{section}{\abkvz}
-\input{Abkuerzungen}
-\clearpage
+\input{Allgemein/Abkuerzungen.tex}
+%\clearpage
 
 % Inhalt ---------------------------------------------------------------------
 \pagenumbering{arabic}
-\input{Inhalt.tex}
+\input{Inhalt/Inhalt.tex}
 
 % Literatur ------------------------------------------------------------------
-\clearpage
+%\clearpage
 \renewcommand{\refname}{Literaturverzeichnis}
-\bibliography{Bibliographie}
-\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses
-\input{Erklaerung}
+\bibliography{Allgemein/Bibliographie}
+\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses.
+\input{Allgemein/Erklaerung.tex}  %%  eidesstattliche..
 
 % Anhang ---------------------------------------------------------------------
 \clearpage
 \appendix
 \pagenumbering{roman}
-\input{Anhang}
+
+\input{Anhang/Anhang.tex}
 
 \end{document}
