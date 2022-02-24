@@ -14,14 +14,15 @@
 \pagestyle{scrheadings}
 % chapterpagestyle gibt es nicht in scrartcl
 %\renewcommand{\chapterpagestyle}{scrheadings}
-\clearscrheadfoot
+%\clearscrheadfoot
+\clearpairofpagestyles
 
 % Kopfzeile
 \renewcommand{\headfont}{\normalfont} % Schriftform der Kopfzeile
 \ihead{\large{\textsc{\titel}}\\ \small{\untertitel} \\[2ex] \textit{\headmark}}
 \chead{}
 \ohead{\includegraphics[scale=0.2]{\betriebLogo}}
-\setlength{\headheight}{15mm} % Höhe der Kopfzeile
+\setlength{\headheight}{19mm} % Höhe der Kopfzeile
 %\setheadwidth[0pt]{textwithmarginpar} % Kopfzeile über den Text hinaus verbreitern (falls Logo den Text überdeckt)
 
 % Fußzeile
@@ -53,6 +54,7 @@
 
 % Allgemeines
 % ------------------------------------------------------------------------------
+\renewcommand{\familydefault}{\sfdefault} %% sans serif anstatt roman als default-font!
 
 \onehalfspacing % Zeilenabstand 1,5 Zeilen
 \frenchspacing % erzeugt ein wenig mehr Platz hinter einem Punkt
@@ -62,9 +64,19 @@
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
 
+
 % Quellcode-Ausgabe formatieren
+
+%\usepackage[scaled]{beramono}
+%\usepackage[default]{sourcecodepro}
+%\usepackage{FiraMono}
+%\usepackage{nimbusmononarrow}
+\usepackage{DejaVuSansMono}
+
+%\lstdefinestyle{tt}{basicstyle=\small\ttfamily}
+\lstset{basicstyle=\smaller\ttfamily,keywordstyle=\bfseries}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, breaklines=true}
-\lstset{emph={square}, emphstyle=\color{red}, emph={[2]root,base}, emphstyle={[2]\color{blue}}}
+\lstset{emph={square}, emphstyle=\color{green}, emph={[2]root,base}, emphstyle={[2]\color{red}}}
 
 \counterwithout{footnote}{section} % Fußnoten fortlaufend durchnummerieren
 \setcounter{tocdepth}{3} % im Inhaltsverzeichnis werden die Kapitel bis zum Level der subsubsection übernommen

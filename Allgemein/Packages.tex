@@ -22,7 +22,8 @@
 \usepackage{array}
 \usepackage{ragged2e}
 \usepackage{lscape}
-\newcolumntype{w}[1]{>{\raggedleft\hspace{0pt}}p{#1}} % Spaltendefinition rechtsbündig mit definierter Breite
+%\newcolumntype{w}[1]{>{\raggedleft\hspace{0pt}}p{#1}} % Spaltendefinition rechtsbündig mit definierter Breite
+%% package array Warning: Column w is already defined on line 25
 
 % Grafiken ---------------------------------------------------------------------
 \usepackage[dvips,final]{graphicx} % Einbinden von JPG-Grafiken ermöglichen
@@ -37,7 +38,7 @@
 \usepackage{xspace} % sorgt dafür, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
 
 \usepackage{makeidx} % für Index-Ausgabe mit \printindex
-\usepackage[printonlyused]{acronym} % es werden nur benutzte Definitionen aufgelistet
+\usepackage[printonlyused,withpage]{acronym} % es werden nur benutzte Definitionen aufgelistet
 
 % Einfache Definition der Zeilenabstände und Seitenränder etc.
 \usepackage{setspace}
@@ -76,6 +77,7 @@
     filecolor=AOBlau, % Verknüpfungen, die lokale Dateien öffnen
     menucolor=AOBlau, % Acrobat-Menüpunkte
     urlcolor=AOBlau,
+    linkcolor=AOBlau,
 % diese Farbdefinitionen sollten für den Druck verwendet werden (alles schwarz)
     %linkcolor=black, % einfache interne Verknüpfungen
     %anchorcolor=black, % Ankertext
@@ -89,7 +91,7 @@
     plainpages=false, % zur korrekten Erstellung der Bookmarks
     pdfpagelabels=true, % zur korrekten Erstellung der Bookmarks
     hypertexnames=false, % zur korrekten Erstellung der Bookmarks
-    linkcolor=black,
+%    linkcolor=black,
     linktoc=all,
 ]{hyperref}
 % Befehle, die Umlaute ausgeben, führen zu Fehlern, wenn sie hyperref als Optionen übergeben werden
@@ -128,7 +130,7 @@
     numberstyle=\tiny,
     breaklines=true,
     breakautoindent=true,
-	captionpos=b,
+	captionpos=t,
 }
 \lstdefinelanguage{cs}{
 	sensitive=false,
