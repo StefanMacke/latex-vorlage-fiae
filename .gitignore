@@ -126,6 +126,5 @@ sympy-plots-for-*.tex/
 *.sav
 /tmp/
 
-# idea
-.idea/
-
+# Docker
+.miktex/

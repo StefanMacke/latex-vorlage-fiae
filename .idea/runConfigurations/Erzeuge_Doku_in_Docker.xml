@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Erzeuge Doku in Docker" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="imageTag" value="miktex/miktex" />
+        <option name="command" value="pdflatex Projektdokumentation.tex" />
+        <option name="containerName" value="miktex" />
+        <option name="commandLineOptions" value="-ti -rm" />
+        <option name="showCommandPreview" value="true" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/miktex/work" />
+              <option name="hostPath" value="$PROJECT_DIR$" />
+            </DockerVolumeBindingImpl>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/miktex/.miktex" />
+              <option name="hostPath" value="$PROJECT_DIR$/.miktex" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
