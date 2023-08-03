@@ -13,8 +13,8 @@ Hierzu müssen die PlantUML-Diagramme mit der Endung `.puml` im Ordner `PlantUML
 
 Darüber hinaus müssen dafür folgende Programme installiert sein:
 
-1. Beliebige Java-Version
-2. Inkscape
+1. Beliebige Java-Version; im PATH hinterlegt
+2. Inkscape; im PATH hinterlegt
 
 ## Docker
 
