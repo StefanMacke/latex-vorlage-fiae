@@ -8,7 +8,7 @@
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="puml" />
       <option name="immediateSync" value="true" />
-      <option name="name" value="PlantUML" />
+      <option name="name" value="PlantUML: Konvertiere *.puml zu *.svg" />
       <option name="output" value="" />
       <option name="outputFilters">
         <array />
@@ -28,7 +28,7 @@
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="svg" />
       <option name="immediateSync" value="true" />
-      <option name="name" value="Inkscape SVG zu PDF" />
+      <option name="name" value="Inkscape: Konvertiere *.svg zu *.pdf" />
       <option name="output" value="" />
       <option name="outputFilters">
         <array />
