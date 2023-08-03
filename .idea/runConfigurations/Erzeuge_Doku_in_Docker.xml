@@ -2,20 +2,16 @@
   <configuration default="false" name="Erzeuge Doku in Docker" type="docker-deploy" factoryName="docker-image" server-name="Docker">
     <deployment type="docker-image">
       <settings>
-        <option name="imageTag" value="miktex/miktex" />
-        <option name="command" value="pdflatex Projektdokumentation.tex" />
-        <option name="containerName" value="miktex" />
-        <option name="commandLineOptions" value="-ti -rm" />
+        <option name="imageTag" value="texlive/texlive" />
+        <option name="command" value="latexmk &quot;-synctex=1&quot; &quot;-interaction=nonstopmode&quot; &quot;-file-line-error&quot; &quot;-pdf&quot; &quot;-outdir=/data/&quot; &quot;/data/Projektdokumentation&quot; -f" />
+        <option name="containerName" value="texlive" />
+        <option name="commandLineOptions" value="-i --rm" />
         <option name="showCommandPreview" value="true" />
         <option name="volumeBindings">
           <list>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="/miktex/work" />
+              <option name="containerPath" value="/data" />
               <option name="hostPath" value="$PROJECT_DIR$" />
-            </DockerVolumeBindingImpl>
-            <DockerVolumeBindingImpl>
-              <option name="containerPath" value="/miktex/.miktex" />
-              <option name="hostPath" value="$PROJECT_DIR$/.miktex" />
             </DockerVolumeBindingImpl>
           </list>
         </option>
