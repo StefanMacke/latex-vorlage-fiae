@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Erzeuge Doku in Docker" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="imageTag" value="texlive/texlive" />
+        <option name="command" value="latexmk &quot;-synctex=1&quot; &quot;-interaction=nonstopmode&quot; &quot;-file-line-error&quot; &quot;-pdf&quot; &quot;-outdir=/data/&quot; &quot;/data/Projektdokumentation&quot; -f" />
+        <option name="containerName" value="texlive" />
+        <option name="commandLineOptions" value="-i --rm" />
+        <option name="showCommandPreview" value="true" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/data" />
+              <option name="hostPath" value="$PROJECT_DIR$" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

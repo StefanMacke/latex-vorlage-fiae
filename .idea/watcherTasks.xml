@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectTasksOptions">
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="-jar $ProjectFileDir$\plantuml.jar -charset UTF-8 -svg $FileDir$/$FileNameWithoutExtension$.puml" />
+      <option name="checkSyntaxErrors" value="false" />
+      <option name="description" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="puml" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="PlantUML: Konvertiere *.puml zu *.svg" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="program" value="java" />
+      <option name="runOnExternalChanges" value="true" />
+      <option name="scopeName" value="All Places" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="" />
+      <envs />
+    </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="--export-filename=$FileDir$/$FileNameWithoutExtension$.pdf $FileDir$/$FileName$" />
+      <option name="checkSyntaxErrors" value="false" />
+      <option name="description" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="svg" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Inkscape: Konvertiere *.svg zu *.pdf" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="program" value="inkscape.exe" />
+      <option name="runOnExternalChanges" value="true" />
+      <option name="scopeName" value="All Places" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="" />
+      <envs />
+    </TaskOptions>
+  </component>
+</project>
