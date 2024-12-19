@@ -103,74 +103,41 @@
 
 
 % zum Einbinden von Programmcode -----------------------------------------------
-\usepackage{listings}
+\usepackage{caption}
+\usepackage[newfloat]{minted}
+\SetupFloatingEnvironment{listing}{name=Listing, placement=hbp}
+\renewcommand*{\listlistingname}{Listings}
+
 \usepackage{xcolor}
 \definecolor{hellgelb}{rgb}{1,1,0.9}
 \definecolor{colKeys}{rgb}{0,0,1}
 \definecolor{colIdentifier}{rgb}{0,0,0}
 \definecolor{colComments}{rgb}{0,0.5,0}
 \definecolor{colString}{rgb}{1,0,0}
-\lstset{
-    float=hbp,
-	basicstyle=\footnotesize,
-    identifierstyle=\color{colIdentifier},
-    keywordstyle=\color{colKeys},
-    stringstyle=\color{colString},
-    commentstyle=\color{colComments},
-    backgroundcolor=\color{hellgelb},
-    columns=flexible,
-    tabsize=2,
-    frame=single,
-    extendedchars=true,
-    showspaces=false,
-    showstringspaces=false,
-    numbers=left,
-    numberstyle=\tiny,
-    breaklines=true,
-    breakautoindent=true,
-	captionpos=b,
+
+% See https://pygments.org/styles/ or pygments -L styles
+\usemintedstyle{sas}
+\setminted{%
+  bgcolor=hellgelb,%
+  breaklines,%
+  frame=single,%
+  fontsize=\footnotesize,%
+  linenos,%
+  numbers=left,%
+  numbersep=5pt,%
+  tabsize=2,%
 }
-\lstdefinelanguage{cs}{
-	sensitive=false,
-	morecomment=[l]{//},
-	morecomment=[s]{/*}{*/},
-	morestring=[b]",
-	morekeywords={
-		abstract,event,new,struct,as,explicit,null,switch
-		base,extern,object,this,bool,false,operator,throw,
-		break,finally,out,true,byte,fixed,override,try,
-		case,float,params,typeof,catch,for,private,uint,
-		char,foreach,protected,ulong,checked,goto,public,unchecked,
-		class,if,readonly,unsafe,const,implicit,ref,ushort,
-		continue,in,return,using,decimal,int,sbyte,virtual,
-		default,interface,sealed,volatile,delegate,internal,short,void,
-		do,is,sizeof,while,double,lock,stackalloc,
-		else,long,static,enum,namespace,string},
-}
-\lstdefinelanguage{natural}{
-	sensitive=false,
-	morecomment=[l]{/*},
-	morestring=[b]",
-	morestring=[b]',
-	alsodigit={-,*},
-	morekeywords={
-		DEFINE,DATA,LOCAL,END-DEFINE,WRITE,CALLNAT,PARAMETER,USING,
-		IF,NOT,END-IF,ON,*ERROR-NR,ERROR,END-ERROR,ESCAPE,ROUTINE,
-		PERFORM,SUBROUTINE,END-SUBROUTINE,CONST,END-FOR,END,FOR,RESIZE,
-		ARRAY,TO,BY,VALUE,RESET,COMPRESS,INTO,EQ},
-}
-\lstdefinelanguage{php}{
-	sensitive=false,
-	morecomment=[l]{/*},
-	morestring=[b]",
-	morestring=[b]',
-	alsodigit={-,*},
-	morekeywords={
-		abstract,and,array,as,break,case,catch,cfunction,class,clone,const,
-		continue,declare,default,do,else,elseif,enddeclare,endfor,endforeach,
-		endif,endswitch,endwhile,extends,final,for,foreach,function,global,
-		goto,if,implements,interface,instanceof,namespace,new,old_function,or,
-		private,protected,public,static,switch,throw,try,use,var,while,xor
-		die,echo,empty,exit,eval,include,include_once,isset,list,require,
-		require_once,return,print,unset},
-}
+
+% Quellcode-Ausgabe formatieren
+%\lstset{emph={square}, emphstyle=\color{red}, emph={[2]root,base}, emphstyle={[2]\color{blue}}}
+
+%\lstset{
+%    identifierstyle=\color{colIdentifier},
+%    keywordstyle=\color{colKeys},
+%    stringstyle=\color{colString},
+%    commentstyle=\color{colComments},
+%    columns=flexible,
+%    extendedchars=true,
+%    numberstyle=\tiny,
+%	captionpos=b,
+%}
